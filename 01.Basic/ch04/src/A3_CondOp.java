@@ -12,7 +12,7 @@ public class A3_CondOp {
 		System.out.println("큰 수 : " +big);
 		
 		diff = (num1 > num2) ? (num1 - num2) : (num2 - num1);
-		System.out.println("절대값 : " + diff);
+		System.out.println("두수의 차 구하기 : " + diff);
 
 	}
 
