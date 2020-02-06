@@ -2,10 +2,10 @@
 public class A_UseVariable {
 
 	public static void main(String[] args) {
-		int num1;		// º¯¼ö ¼±¾ğ
-		num1 = 10;		// º¯¼ö¿¡ °ª ´ëÀÔ
+		int num1;		// ë³€ìˆ˜ ì„ ì–¸
+		num1 = 10;		// ë³€ìˆ˜ì— ê°’ ëŒ€ì…
 		
-		int num2 = 20;		 // º¯¼ö ¼±¾ğ°ú µ¿½Ã¿¡ °ªÀ» ´ëÀÔ
+		int num2 = 20;		 // ë³€ìˆ˜ ì„ ì–¸ê³¼ ë™ì‹œì— ê°’ì„ ëŒ€ì…
 		int num3 = num1 + num2;
 		
 		System.out.println(num1 + "+" + num2 + "=" + num3);

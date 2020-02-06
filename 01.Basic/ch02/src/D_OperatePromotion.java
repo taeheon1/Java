@@ -5,7 +5,7 @@ public class D_OperatePromotion {
 		short num1 = 11;
 		short num2 = 22;
 		
-		//´ÙÀ½ ÁÖ¼®À» Ç®°í ¿¡·¯ È®ÀÎ
+		//ë‹¤ìŒ ì£¼ì„ì„ í’€ê³  ì—ëŸ¬ í™•ì¸
 		short result = num1 + num2;
 		System.out.println(result);
 

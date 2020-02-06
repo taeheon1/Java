@@ -2,13 +2,13 @@
 public class E_CharTypeUnicode {
 
 	public static void main(String[] args) {
-		char ch1 = 'Çæ';
+		char ch1 = 'í—';
 		char ch2 = 'È®';
 		
-		char ch3 = 54736;		//¹®ÀÚ 'Çæ'ÀÇ À¯´ÏÄÚµå °ª : 10Áø¼ö
-		char ch4 = 54869;		//¹®ÀÚ 'È®'ÀÇ À¯´ÏÄÚµå °ª
+		char ch3 = 54736;		//ë¬¸ì 'í—'ì˜ ìœ ë‹ˆì½”ë“œ ê°’ : 10ì§„ìˆ˜
+		char ch4 = 54869;		//ë¬¸ì 'í™•' ì˜ ìœ ë‹ˆì½”ë“œ ê°’
 		
-		char ch5 = 0xD5D0;		//¹®ÀÚ 'Çæ'ÀÇ À¯´ÏÄÚµå °ª : 16Áø¼ö
+		char ch5 = 0xD5D0;		//ë¬¸ì ' í—'ì˜ ìœ ë‹ˆì½”ë“œ ê°’ : 16ì§„ìˆ˜
 		char ch6 = 0xD655;
 		
 		char ch7 = 'A';

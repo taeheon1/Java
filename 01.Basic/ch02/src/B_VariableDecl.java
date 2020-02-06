@@ -2,7 +2,7 @@
 public class B_VariableDecl {
 
 	public static void main(String[] args) {
-		double num1, num2;		// µÎ °³ÀÇ º¯¼ö µ¿½Ã ¼±¾ğ
+		double num1, num2;		// ë‘ ê°œì˜ ë³€ìˆ˜ ë™ì‹œ ì„ ì–¸
 		double result;
 		
 		num1 = 1.0000001;
