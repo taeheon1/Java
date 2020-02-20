@@ -12,6 +12,7 @@ public class game1 {
 
 		while (true) {
 			System.out.println("무엇을 내겠습니까 ?(1:가위 2:바위 3:보 0:종료) :");
+
 			my = sc.nextInt();
 			com = random.nextInt(3) + 1;
 
