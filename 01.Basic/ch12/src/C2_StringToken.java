@@ -10,11 +10,12 @@ public class C2_StringToken {
 		int num = Integer.parseInt(n.nextToken());
 		int sum = num;
 
+		String a1 = "a";
 		while (v.hasMoreTokens()) {
 			s = s + "+" + (v.nextToken());
 			sum = sum + Integer.parseInt(n.nextToken());
 		}
-
+		
 		System.out.println(s + "=" + sum);
 	}
 

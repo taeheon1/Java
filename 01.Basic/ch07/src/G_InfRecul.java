@@ -10,7 +10,8 @@ public class G_InfRecul {
 		
 		if(cnt==1)
 			return;
-		
+		//cnt= cnt - 1;
+		//showHi(cnt--); 무한 호출 실행 x
 		showHi(--cnt);
 	}
 
