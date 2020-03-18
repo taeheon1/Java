@@ -12,10 +12,6 @@ import java.util.Scanner;
 import java.util.Set;
 import java.util.StringTokenizer;
 
-
-
-
-
 public class MyphoneBook {
 
 	static Scanner sc = new Scanner(System.in);
@@ -84,35 +80,35 @@ public class MyphoneBook {
 //			 System.out.println(map.get(s).toString());
 //		 System.out.println("-------------------------------");
 	}
-	
+
 	public static void readInfo() {
-		try(BufferedReader br = new BufferedReader(new FileReader("phone_data.csv"))){
+		try (BufferedReader br = new BufferedReader(new FileReader("phone_data.csv"))) {
 			String str;
-			
-			while(true) {
+
+			while (true) {
 				str = br.readLine();
-				if(str == null) break;
-				
+				if (str == null)
+					break;
+
 				StringTokenizer sToken = new StringTokenizer(str, "\",\"");
 				String name = sToken.nextToken();
 				String phoneNumber = sToken.nextToken();
 				String email = null;
-				if(sToken.hasMoreTokens()) {
+				if (sToken.hasMoreTokens()) {
 					email = sToken.nextToken();
 //					System.out.println("["+email+"]");
 				}
-				
+
 				PhoneInfo pInfo;
-				if(email != null) {
+				if (email != null) {
 					pInfo = new PhoneInfo(name, phoneNumber, email);
 				} else {
 					pInfo = new PhoneInfo(name, phoneNumber);
 				}
-				//pInfo.showPhoneInfo();
+				// pInfo.showPhoneInfo();
 				map.put(name, pInfo);
 			}
-		}
-		catch(IOException e) {
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}

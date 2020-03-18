@@ -26,3 +26,4 @@ public class PhoneInfo {
 	}
 }
 //정보
+//if (email != null && !email.equals("") && !email.equals("null"))

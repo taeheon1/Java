@@ -23,7 +23,7 @@ public class PreparedStatementEx {
 			String sql = "create table test2(id varchar2(10)," + "password varchar2(10))";
 			pstmt1 = con.prepareStatement(sql);
 			int updateCount = pstmt1.executeUpdate();
-			System.out.println("createCount : " + updateCount);''
+			System.out.println("createCount : " + updateCount);
 
 			// -------------------------------------------------------
 			sql = "insert into test2 values(?, ?)";

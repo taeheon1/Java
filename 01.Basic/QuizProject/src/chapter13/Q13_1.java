@@ -12,10 +12,11 @@ public class Q13_1 {
 
 		for (int i = 0; i < ar1.length; i++) {
 			int num = sc.nextInt();
-			num = ar1[i];
+			ar1[i] = num;
 		}
+		// 1 , 8 , 6 , 10 , 3
 		int max = 0;
-		int min = 0;
+		int min = ar1[0];
 		int sum = 0;
 		for (int i = 0; i < ar1.length; i++) {
 			if (max < ar1[i]) {
@@ -26,11 +27,15 @@ public class Q13_1 {
 			}
 			sum += ar1[i];
 		}
-			System.out.println("최대값 : "+ max);
-			System.out.println("최소값 : "+ min);
-			System.out.println(" 합계 : " + sum);
+		for (int j = 0; j < ar1.length; j++) {
+			if (min > ar1[j]) {
+				min = ar1[j];
+			}
+		}
+		System.out.println("최대값 : " + max);
+		System.out.println("최소값 : " + min);
+		System.out.println(" 합 계 : " + sum);
 	}
-	
 
 }
 
