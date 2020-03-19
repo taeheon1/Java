@@ -7,13 +7,13 @@ public class HashMapTest {
 
 	public static void main(String[] args) {
 
-		// Map<Å°, ¹ë·ù> -> Å°´Â Áßº¹À» Çã¿ëÇÏÁö ¾ÊÀ½
-		// Å°°¡ Áßº¹ÀÎ °æ¿ì °ªÀ» º¯°æ
+		// Map<í‚¤, ë°¸ë¥˜> -> í‚¤ëŠ” ì¤‘ë³µì„ í—ˆìš©í•˜ì§€ ì•ŠìŒ
+		// í‚¤ê°€ ì¤‘ë³µì¸ ê²½ìš° ê°’ì„ ë³€ê²½
 
 		Map<String, String> map = new HashMap<>();
-		map.put("¸¸È­", "¸¶³à¹è´ŞºÎ Å°Å°");
-		map.put("È£·¯", "½ºÅ©¸²");
-		map.put("¿µÈ­", "È²È¥¿¡¼­ »õº®±îÁö");
+		map.put("ë§Œí™”", "ë§ˆë…€ë°°ë‹¬ë¶€ í‚¤í‚¤");
+		map.put("í˜¸ëŸ¬", "ìŠ¤í¬ë¦¼");
+		map.put("ì˜í™”", "í™©í˜¼ì—ì„œ ìƒˆë²½ê¹Œì§€");
 
 		System.out.println(map);
 		System.out.println();
@@ -26,7 +26,7 @@ public class HashMapTest {
 			System.out.println(map.get(key));
 		}
 
-		map.put("¿µÈ­", "³îÀÚ...."); // µ¿ÀÏÇÑ Å°´Â °ªÀ» º¯°æÇÑ´Ù.
+		map.put("ì˜í™”", "ë†€ì..."); // ë™ì¼í•œ í‚¤ëŠ” ê°’ì„ ë³€ê²½í•œë‹¤.
 		System.out.println(map);
 		System.out.println();
 	}

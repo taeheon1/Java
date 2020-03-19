@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class ThreadMain {
 
 	public static void main(String[] args) {
-		System.out.println("¼ıÀÚ¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä.");
+		System.out.println("ìˆ«ìë¥¼ ì…ë ¥í•´ ì£¼ì„¸ìš”.");
 		Scanner s = new Scanner(System.in);
 		String s_num = s.nextLine();
 		int n_num = Integer.parseInt(s_num);
@@ -13,9 +13,9 @@ public class ThreadMain {
 			tsub.start();
 
 		} catch (Exception e) {
-			System.out.println("¿¹¿Ü:" + e);
+			System.out.println("ì˜ˆì™¸:" + e);
 		}
-		System.out.println("ÀÌ¸§À» ÀÔ·ÂÇØ ÁÖ¼¼¿ä.");
+		System.out.println("ì´ë¦„ì„ ì…ë ¥í•´ ì£¼ì„¸ìš”.");
 		String s_name = s.nextLine();
 	}
 }

@@ -3,13 +3,13 @@ import java.util.Scanner;
 
 public class ThreadMain {
 	
-	//»ı¼ºÀÚ
+	//ìƒì„±ì
 	public ThreadMain() {
 		
 	}
 	
 	public void init() {
-		System.out.println("¼ıÀÚ¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä.");
+		System.out.println("ìˆ«ìë¥¼ ì…ë ¥í•´ ì£¼ì„¸ìš”.");
 		Scanner s = new Scanner(System.in);
 		String s_num = s.nextLine();
 		int n_num = Integer.parseInt(s_num);
@@ -21,20 +21,20 @@ public class ThreadMain {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println("ÀÌ¸§À» ÀÔ·ÂÇØ ÁÖ¼¼¿ä.");
+		System.out.println("ì´ë¦„ì„ ì…ë ¥í•´ ì£¼ì„¸ìš”.");
 		String s_name = s.nextLine();
 	}
 
 	public static void main(String[] args) {
 		
-		//°´Ã¼ »ı¼º.
+		//ê°ì²´ ìƒì„±.
 		ThreadMain tm = new ThreadMain();
 		tm.init();
 
 	}
 	
 	/////////////////////////////////////////////////////////
-	//³»ºÎ Å¬·¡½º
+	//ë‚´ë¶€ í´ë˜ìŠ¤
 	class ThreadSub extends Thread {
 		int nNum;
 
@@ -42,7 +42,7 @@ public class ThreadMain {
 			this.nNum = num;
 		}
 
-		// run()¸Ş¼Òµå ÀçÁ¤ÀÇ
+		// run()ï¿½Ş¼Òµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		@Override
 		public void run() {
 			int i = 0;
@@ -53,7 +53,7 @@ public class ThreadMain {
 					System.out.println("Thread : " + i);
 					
 				} catch (Exception e) {
-					System.out.println("¿¹¿Ü : " + e);
+					System.out.println("ï¿½ï¿½ï¿½ï¿½ : " + e);
 				}
 			}
 		}

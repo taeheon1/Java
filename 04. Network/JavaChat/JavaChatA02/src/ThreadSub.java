@@ -7,7 +7,7 @@ public class ThreadSub extends Thread {
 		this.nNum = num;
 	}
 
-	// run()¸Ş¼Òµå ÀçÁ¤ÀÇ
+	// run()ë©”ì†Œë“œ ì¬ì •ì˜
 	@Override
 	public void run() {
 		int i = 0;
@@ -17,7 +17,7 @@ public class ThreadSub extends Thread {
 				i = i + 1;
 				System.out.println("Thread : " + i);
 			} catch (Exception e) {
-				System.out.println("¿¹¿Ü : " + e);
+				System.out.println("ì˜ˆì™¸ : " + e);
 			}
 		}
 	}
