@@ -40,8 +40,8 @@ public class MyPhoneBook {
 			pstmt1.setString(1, name);
 			pstmt1.setString(2, phoneNumber);
 			pstmt1.setString(3, email);
-			int updateCount = pstmt1.executeUpdate(); // updateCount 몇번 업데이트 되었나 확인
-			System.out.println(updateCount);
+			int updateCount = pstmt1.executeUpdate(); 
+			System.out.println(updateCount); // updateCount 몇번 업데이트 되었나 확인
 			System.out.println("데이터베이스에 추가되었습니다. ");
 			System.out.println("-------------------------");
 		} catch (Exception e) {
@@ -57,7 +57,7 @@ public class MyPhoneBook {
 		try {
 			pstmt2 = con.prepareStatement(sql);
 			pstmt2.setString(1, name);
-			ResultSet rs = pstmt1.executeQuery();
+			ResultSet rs = pstmt2.executeQuery();
 			if (rs.next()) {
 				System.out.println("name : " + rs.getString("name"));
 				System.out.println("phoneNumeber : " + rs.getString("phoneNumber"));

@@ -1,4 +1,3 @@
-import javax.swing.table.TableColumn;
 //쓰레드를 생성하는 방법
 class Task extends Thread {
 	public void run() {
@@ -15,7 +14,7 @@ public class A2_MakeThreadDemo {
 		Task t1 = new Task();
 
 		t1.start();
-
+		
 		System.out.println("End " + Thread.currentThread().getName());
 
 	}

@@ -3,9 +3,10 @@ import java.util.Scanner;
 public class IF_01 {
 
 	public static void main(String[] args) {
+		
 		Scanner sc = new Scanner(System.in);
 		int grd = sc.nextInt();
-		
+
 		if (grd >= 90) {
 			System.out.println("A");
 		} else if (grd >= 80) {
@@ -15,7 +16,7 @@ public class IF_01 {
 		} else {
 			System.out.println("D");
 		}
-			
+
 	}
 }
 
