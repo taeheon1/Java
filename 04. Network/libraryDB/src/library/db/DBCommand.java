@@ -7,6 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DBCommand {
 
@@ -61,6 +63,7 @@ public class DBCommand {
 				pstmt2.setString(2, bookname);
 			rs = pstmt2.executeQuery();
 			if (rs.next()) {
+				System.out.println("-----------------------------------------------");
 				System.out.println("책 번호 : " + rs.getString("booknum"));
 				System.out.println("책 제목 : " + rs.getString("bookname"));
 				bookcount = Integer.valueOf(rs.getString("bookcount"));
@@ -68,7 +71,6 @@ public class DBCommand {
 			} else {
 				System.out.println("해당 책이 없습니다.");
 			}
-			System.out.println("-----------------------------------------------");
 			System.out.println();
 			rs.close();
 		} catch (Exception e) {
@@ -146,6 +148,7 @@ public class DBCommand {
 
 	// 회원가입 메서드
 	public void signUp(String user_id, String user_name) {
+
 		sql = "insert into librarydb_user values(user_num.nextval, ?, ?, ?)";
 
 		try {
@@ -255,7 +258,7 @@ public class DBCommand {
 			pstmt3.setDate(1, Date.valueOf(rtd));
 			pstmt3.setString(2, users);
 			int updateCount = pstmt3.executeUpdate();
-			if (updateCount == 1) {
+			if (updateCount > 0) {
 				System.out.println("-----------------------------------------------");
 				System.out.println("블랙리스트에 추가되었습니다. ");
 			} else {
@@ -323,7 +326,8 @@ public class DBCommand {
 	}
 
 	// 대여처리 메서드
-	public String rentBook(String booknum, String userid) {
+	public String rentBook(String booknum, String userid, String date) {
+		LocalDate today;
 		int bookcount = selBook(booknum);
 		int bookcount1 = bookcount - 1;
 		if (selBook(booknum) <= 0) {
@@ -332,8 +336,13 @@ public class DBCommand {
 		if (serUser(userid).equals("")) {
 			return "등록되어있지 않은 회원아이디 입니다. \n다시입력해주세요.";
 		}
+
+		if (date.equals("")) {
+			today = LocalDate.now();
+		} else {
+			today = LocalDate.parse(date);
+		}
 		cModBook(booknum, bookcount1); // 책수량 메서드, 책수량 1 감소
-		LocalDate today = LocalDate.now();
 		LocalDate rtd = today.plusDays(7);
 		String ret = String.valueOf(rtd) + "까지 반납\n" + "책 수량 " + bookcount + "권 에서 " + bookcount1 + "권 으로 변경완료.";
 
@@ -453,7 +462,7 @@ public class DBCommand {
 	public void blackAutoMod() {
 		LocalDate today = LocalDate.now();
 
-		sql = "update LIBRARYDB_USER set user_black = ? where USER_BLACK = ?";
+		sql = "update LIBRARYDB_USER set user_black = ? where USER_BLACK < ?";
 
 		try {
 			pstmt4 = con.prepareStatement(sql);
@@ -462,6 +471,36 @@ public class DBCommand {
 			pstmt4.executeUpdate();
 		} catch (SQLException se) {
 			System.out.println("이미 있는 데이터입니다.");
+		} catch (Exception e) {
+			System.out.println("데이터베이스 에러");
+		}
+	}
+
+	// 자동으로 블랙리스트 추가 메서드
+	public void blackAutoAdd() {
+		LocalDate today = LocalDate.now();
+		List<String> list = new ArrayList<>();
+
+		sql = "SELECT RENT_ID FROM LIBRARYDB_RENT WHERE RENT_OX = 'X' AND RENT_RETURNDATE < ?";
+
+		try {
+			pstmt4 = con.prepareStatement(sql);
+			pstmt4.setDate(1, Date.valueOf(today));
+			rs = pstmt4.executeQuery();
+			while (rs.next()) {
+				list.add(rs.getString("RENT_ID"));
+			}
+			if (list.size() > 0) {
+				for (int i = 0; i < list.size(); i++) {
+					sql = "update LIBRARYDB_USER set USER_BLACK = ? where USER_ID = ?";
+					pstmt4 = con.prepareStatement(sql);
+					pstmt4.setDate(1, Date.valueOf(today.plusDays(1)));
+					pstmt4.setString(2, list.get(i));
+					pstmt4.executeUpdate();
+				}
+			}
+		} catch (SQLException se) {
+			System.out.println("데이터베이스 에러!");
 		} catch (Exception e) {
 			System.out.println("데이터베이스 에러");
 		}
